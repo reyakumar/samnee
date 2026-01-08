@@ -1,0 +1,153 @@
+/* Main Header Container */
+.header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #0f172a, #1f2937);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(2, 6, 23, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 30px;
+  padding: 0.75rem 1rem;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.company-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Navigation */
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar .nav-menu li {
+  margin: 0;
+}
+
+.navbar .nav-menu li a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: background 160ms, color 160ms;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: block;
+}
+
+.navbar .nav-menu li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Quote Button */
+.quote-section .get-quote-btn {
+  background: #ef4444;
+  color: #fff;
+  border: 0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 200ms, transform 150ms;
+  white-space: nowrap;
+}
+
+.quote-section .get-quote-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.quote-section .get-quote-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-menu {
+    gap: 0.75rem;
+  }
+
+  .navbar .nav-menu li a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .quote-section .get-quote-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    display: none;
+  }
+
+  .quote-section {
+    display: none;
+  }
+
+  .header-container {
+    justify-content: center;
+  }
+
+  .logo-section {
+    gap: 0.5rem;
+  }
+
+  .company-name {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    height: 36px;
+    width: 36px;
+  }
+}
