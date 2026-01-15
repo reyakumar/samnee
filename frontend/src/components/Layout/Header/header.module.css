@@ -70,6 +70,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   display: block;
+  cursor: pointer;
 }
 
 .navbar .nav-menu li a:hover {

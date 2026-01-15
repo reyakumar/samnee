@@ -1,14 +1,19 @@
 import React from 'react';
 import Header from '../components/Layout/Header/Header.jsx';
-import HeroSection from '../components/HeroSection/HeroSection.jsx';
 import Footer from '../components/Layout/Footer/Footer.jsx';
 
-export default function Home() {
+const Contact = ({ onNavigate }) => {
     return (
         <div>
-            <Header />
+            <Header onNavigate={onNavigate} />
+            
+            <section style={{ minHeight: 'calc(100vh - 200px)', padding: '60px 20px' }}>
+                {/* Contact section content goes here */}
+            </section>
 
             <Footer />
         </div>
     );
-}
+};
+
+export default Contact;
