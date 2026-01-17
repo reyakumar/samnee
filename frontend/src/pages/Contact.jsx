@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import Header from '../components/Layout/Header/Header.jsx';
 import Footer from '../components/Layout/Footer/Footer.jsx';
 import styles from './Contact.module.css';
 
@@ -28,7 +27,6 @@ const Contact = ({ onNavigate }) => {
 
     return (
         <div className={styles.contactPage}>
-            <Header onNavigate={onNavigate} />
             
             <section className={styles.contactSection}>
                 <div className={styles.container}>

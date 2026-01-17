@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './footer.module.css';
 import { companyInfo } from '../../../config/companyInfo';
-import { Factory } from 'lucide-react';
+// import { Factory } from 'lucide-react';
 
 const Footer = () => {
     return (

@@ -1,14 +1,11 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './header.module.css';
 import logo from '../../../assets/images/logo.png';
 import { companyInfo } from '../../../config/companyInfo';
 
-const Header = ({ onNavigate }) => {
-    const handleNavClick = (page) => {
-        if (onNavigate) {
-            onNavigate(page);
-        }
-    };
+const Header = () => {
+    const navigate = useNavigate();
 
     return (
         <header className={styles.header}>
@@ -16,7 +13,7 @@ const Header = ({ onNavigate }) => {
                 {/* Logo Section */}
                 <div 
                     className={styles['logo-section']}
-                    onClick={() => handleNavClick('home')}
+                    onClick={() => navigate('/')}
                     style={{ cursor: 'pointer' }}
                 >
                     <img src={logo} alt="Samnee Auto OPC" className={styles.logo} />
@@ -26,15 +23,20 @@ const Header = ({ onNavigate }) => {
                 {/* Navigation Menu */}
                 <nav className={styles.navbar}>
                     <ul className={styles['nav-menu']}>
-                        <li><a onClick={() => handleNavClick('home')}>Home</a></li>
-                        <li><a onClick={() => handleNavClick('products')}>Products</a></li>
-                        <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/products">Products</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
 
                 {/* Get Quote Button */}
                 <div className={styles['quote-section']}>
-                    <button className={styles['get-quote-btn']}>Get Quote</button>
+                    <button 
+                        className={styles['get-quote-btn']}
+                        onClick={() => navigate('/contact')}
+                    >
+                        Get Quote
+                    </button>
                 </div>
             </div>
         </header>

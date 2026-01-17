@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Layout/Header/Header';
 import Home from './pages/Home';
+// import Products from './pages/Products';
 import Contact from './pages/Contact';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const handleNavigation = (page) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-  };
-
-  return (
-    <div className="App">
-      {currentPage === 'home' && <Home onNavigate={handleNavigation} />}
-      {currentPage === 'contact' && <Contact onNavigate={handleNavigation} />}
-    </div>
-  );
+    return (
+        <Router>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                {/* <Route path="/products" element={<Products />} /> */}
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
